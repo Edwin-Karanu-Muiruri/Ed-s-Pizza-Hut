@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
     <title>Orders Page</title>
 </head>
 <body>
-    
+    <div class="jumbotron">
+        <h1><b>Make your order</b></h1>
+    </div>
+    <div class="orderForm">
+        <form action="/action_page.php">
+            <div class="form-group">
+                <p>What type of pizza would you like?</p>
+                <select id="crustOptions">
+                    <option value="defaultOption">Select a pizza type</option>
+                    <option value="nYCStyle">New-York style pizza</option>
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="vegan">Vegan Pizza</option>
+                    <option value="otherPizzaTypes">other pizza types</option>
+                  </select>
+            <div class="form-group">
+                <p>How Many Pizzas would you like?</p>
+                <input type="number" class="form-control" id="numberOfPizzas" placeholder="" name="Number of Pizzas">
+            </div>
+            <div class="form-group">
+                <p>What type of crust would you like on your Pizza?</p>
+                <select id="crustOptions">
+                    <option value="defaultOption">Crust options</option>
+                    <option value="crispy">Crispy</option>
+                    <option value="stuffed">Stuffed</option>
+                    <option value="glutten-free">Glutten-free</option>
+                    <option value="otherCrustTypes">other crust types</option>
+                  </select>
+            </div>
+            <div class="form-group">
+                <p>Choose the toppings you'd like on your Pizza?</p>
+                <select id="toppingsOptions">
+                    <option value="defaultOption">Topping options</option>
+                    <option value="sausage">Sausages</option>
+                    <option value="pineapple">Pineapple</option>
+                    <option value="cheeseAndOnions">Cheese and onions</option>
+                    <option value="otherToppings">other toppings</option>
+                  </select>
+            <div class="checkbox">
+                <p>Would you like your pizza to your location or pick it up from us?</p>
+                <label><input type="checkbox" name="remember"> Deliver to me</label>
+                <div class="deliveryOptions">
+                    <p>Please enter a delivery Location</p>
+                    <input type="text" class="form-control" id="deliveryAddress" placeholder="" name="Place of delivery">
+                </div>
+                <label><input type="checkbox" name="remember"> I'll pick it up myself</label>
+                <p class="pickUpParagraph">
+                    Please show our attendants your receipt to receive your pizza.<br>
+                    Thank you for choosing Ed's Pizza Hut ;-)
+                </p>
+            </div>
+            <button type="submit" class="btn btn-default">Place your order</button>
+        </form>
+    </div>
 </body>
 </html>
