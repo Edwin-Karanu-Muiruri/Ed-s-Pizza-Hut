@@ -49,12 +49,12 @@
                   </select>
             <div class="checkbox">
                 <p>Would you like your pizza to your location or pick it up from us?</p>
-                <label><input type="checkbox" name="remember"> Deliver to me</label>
+                <label><input type="checkbox" name="remember" onclick="whatToShow()" id="deliveryButton"> Deliver to me</label>
                 <div class="deliveryOptions">
                     <p>Please enter a delivery Location</p>
                     <input type="text" class="form-control" id="deliveryAddress" placeholder="" name="Place of delivery">
                 </div>
-                <label><input type="checkbox" name="remember"> I'll pick it up myself</label>
+                <label><input type="checkbox" name="remember" id="selfPickUp"> I'll pick it up myself</label>
                 <p class="pickUpParagraph">
                     Please show our attendants your receipt to receive your pizza.<br>
                     Thank you for choosing Ed's Pizza Hut ;-)

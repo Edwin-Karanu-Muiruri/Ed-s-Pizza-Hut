@@ -1,3 +1,8 @@
 .deliveryOptions, .pickUpParagraph{
     display: none;
 }
+#menuImgPizza{
+    height: 200px;
+    width: 300px;
+    padding: 10px;
+}
