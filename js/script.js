@@ -96,7 +96,7 @@ $(document).ready(function(){
                 totalToppingsPrice = totalToppingsPrice + 100;  
             };
         }
-        if(pizzaSize==="medium"){
+        else if(pizzaSize==="medium"){
             if(topping1==="Barbrque Chicken"){
                 totalToppingsPrice = totalToppingsPrice + 120;  
             }
@@ -114,9 +114,9 @@ $(document).ready(function(){
             }
             if(topping1==="Barbrque Chicken"){
                 totalToppingsPrice = totalToppingsPrice + 180;  
-            }
-        };
-        if(pizzaSize==="large"){
+            };
+        }
+        else if(pizzaSize==="large"){
             if(topping1==="Barbrque Chicken"){
                 totalToppingsPrice = totalToppingsPrice + 200;  
             }
@@ -134,9 +134,19 @@ $(document).ready(function(){
             }
             if(topping1==="Barbrque Chicken"){
                 totalToppingsPrice = totalToppingsPrice + 200;  
-            }
-        };
+            };
+        }
+        else{alert("All fields are required to complete your order")};
+
+        totalToppingsPrice = totalToppingsPrice * numberOfPizzas;
     };
+//function for delivery
+function deliveryDetails(deliveryLocation){
+    if(delivery==="Yes"){
+        deliveryCost = deliveryCost + 100;
+    }
+    else{deliveryCost =  0;}
+};
 
 
 
