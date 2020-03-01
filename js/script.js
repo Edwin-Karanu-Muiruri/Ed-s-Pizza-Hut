@@ -45,6 +45,33 @@ $(document).ready(function(){
 
     //function for size price
     function sizeOfPizza(pizzaSize, numberOfPizzas){
-        
-    }
+        if(pizzaSize==="small"){
+            return totalSizeOfPizzaPrice = 250;
+        }
+        else if(pizzaSize==="medium"){
+            return totalSizeOfPizzaPrice = 500;
+        }
+        else if(pizzaSize==="large"){
+            return totalSizeOfPizzaPrice = 750;
+        };
+        totalSizeOfPizzaPrice = totalSizeOfPizzaPrice*numberOfPizzas
+    };
+
+    //function for crust price
+    function pizzaCrust(crustType, numberOfPizzas){
+        if(crustType==="crispy"){
+            return totalSizeOfPizzaPrice = 100;
+        }
+        else if(crustType==="stuffed"){
+            return totalSizeOfPizzaPrice = 150;
+        }
+        else if(crustType==="Glutten-Free-crispy"){
+            return totalSizeOfPizzaPrice = 200;
+        }
+        else if(crustType==="Glutten-Free-stuffed"){
+            return totalSizeOfPizzaPrice = 250;
+        };
+    };
+
+
 });
