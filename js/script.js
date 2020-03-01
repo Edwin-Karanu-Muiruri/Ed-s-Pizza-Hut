@@ -6,7 +6,7 @@ $(document).ready(function(){
     $("#selfPickUp").click(function(textToShow){
         $("pickUpParagraph").toggle();
     });
-
+});
     //Business logic for calculating price and displaying receipts.
 
     //declaring global variables to be used in the constructors and functions...
@@ -60,18 +60,83 @@ $(document).ready(function(){
     //function for crust price
     function pizzaCrust(crustType, numberOfPizzas){
         if(crustType==="crispy"){
-            return totalSizeOfPizzaPrice = 100;
+            return totalCrustPrice = 100;
         }
         else if(crustType==="stuffed"){
-            return totalSizeOfPizzaPrice = 150;
+            return totalCrustPrice = 150;
         }
         else if(crustType==="Glutten-Free-crispy"){
-            return totalSizeOfPizzaPrice = 200;
+            return totalCrustPrice = 200;
         }
         else if(crustType==="Glutten-Free-stuffed"){
-            return totalSizeOfPizzaPrice = 250;
+            return totalCrustPrice = 250;
+        }
+        totalCrustPrice = totalCrustPrice*numberOfPizzas
+    };
+
+    //function for toppings price
+    function pizzaToppings(pizzaSize, topping1, topping2, topping3, topping4, topping5, topping6, numberOfPizzas){
+        if(pizzaSize==="small"){
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 100;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 100;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 100;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 100;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 100;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 100;  
+            };
+        }
+        if(pizzaSize==="medium"){
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 120;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 140;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 160;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 180;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 180;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 180;  
+            }
+        };
+        if(pizzaSize==="large"){
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 200;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 200;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 200;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 200;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 200;  
+            }
+            if(topping1==="Barbrque Chicken"){
+                totalToppingsPrice = totalToppingsPrice + 200;  
+            }
         };
     };
 
 
-});
+
