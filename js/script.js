@@ -148,5 +148,10 @@ function deliveryDetails(deliveryLocation){
     else{deliveryCost =  0;}
 };
 
+//function to calculate the total price
+function totalCalculator(totalSizeOfPizzaPrice, totalCrustPrice, totalToppingsPrice, deliveryCost){
+    totalAmount = totalSizeOfPizzaPrice + totalCrustPrice + totalToppingsPrice + deliveryCost;
+}
+
 
 
