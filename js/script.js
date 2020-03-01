@@ -1,12 +1,3 @@
-$(document).ready(function(){
-    //user-logic for informative paragraphs.
-    $("#deliveryButton").click(function(whatToShow){
-        $("deliveryOptions").toggle();
-    });
-    $("#selfPickUp").click(function(textToShow){
-        $("pickUpParagraph").toggle();
-    });
-});
     //Business logic for calculating price and displaying receipts.
 
     //declaring global variables to be used in the constructors and functions...
@@ -152,6 +143,15 @@ function deliveryDetails(deliveryLocation){
 function totalCalculator(totalSizeOfPizzaPrice, totalCrustPrice, totalToppingsPrice, deliveryCost){
     totalAmount = totalSizeOfPizzaPrice + totalCrustPrice + totalToppingsPrice + deliveryCost;
 }
-
+$(document).ready(function(){
+    //user-logic for informative paragraphs.
+    $("#deliveryButton").click(function(){
+        $("deliveryOptions").toggle();
+    });
+    $("#selfPickUp").click(function(){
+        $("pickUpParagraph").toggle();
+    });
+    
+});
 
 
