@@ -1,7 +1,11 @@
 .jumbotron{
-    background-image: url(../img/pizzaBackGround.jpg);
+    background-image: url(../img/pizza-background123.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
+}
+#hutLogo{
+    width: 80px;
 }
 .deliveryOptions, .pickUpParagraph{
     display: none;
