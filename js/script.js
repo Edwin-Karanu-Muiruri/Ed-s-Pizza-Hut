@@ -36,7 +36,15 @@ $(document).ready(function(){
 
     //display prototype
     pizzaOrder.prototype.currentOrder=function(){
-        return("Total Number Of Pizzas: " +this.numberOfPizzas+"\n
-        \n"+)
+        return("Total Number Of Pizzas: " +this.numberOfPizzas+"\n \n"+
+        "Size of Pizza: "+this.pizzaSize+" = "+totalSizeOfPizzaPrice+" \n\n"+
+        "Type of Crust: "+this.crustType+" = "+totalCrustPrice+"\n\n"+
+        "Toppings: "+this.topping1+" "+this.topping2+" "+this.topping3+" "+this.topping4+" "+this.topping5+" "+this.topping6+" = "+totalToppingsPrice+"\n\n"+
+        "Delivery Cost: "+this.deliveryLocation+" = "+deliveryCost);
+    };
+
+    //function for size price
+    function sizeOfPizza(pizzaSize, numberOfPizzas){
+        
     }
 });
