@@ -25,7 +25,7 @@ function Pizza(size,crust,number,delivery,orderLocation,topping1,topping2,toppin
     this.topping6=topping6;
 }
 
-//prototype
+//prototype to display receipt
 Pizza.prototype.order=function(){
     return ("Number of pizzas: "+this.number+"\n \n"
     +"Pizza size: "+this.size+" = "+sizeTotal+"\n\n"
@@ -35,9 +35,8 @@ Pizza.prototype.order=function(){
     +"Delivery: "+this.delivery+" = "+deliveryTotal);
 }
 
-// size function
+// selecting size function
 function sizeCheckout(size,number){
-    //switch statement for pizza size //small=200 medium=400 large=600
     switch (size){
         case ("Small"):
             sizeTotal=sizeTotal+200;
@@ -55,7 +54,7 @@ function sizeCheckout(size,number){
     
 }
 
-//crust function
+//crust selector function
 function crustCheckout(crust,number){
     switch (crust){
         case ("Crispy"):
@@ -75,7 +74,7 @@ function crustCheckout(crust,number){
     crustTotal=crustTotal*number
 }
 
-//toppings function
+//toppings selector function
 function toppingsCheckout(size,topping1,topping2,topping3,topping4,topping5,topping6,number){
         if (size==="Small"){
         if(topping1==="Bacon"){
@@ -142,7 +141,7 @@ function toppingsCheckout(size,topping1,topping2,topping3,topping4,topping5,topp
     toppingsTotal=toppingsTotal*number
 }
 
-//delivery function
+//delivery options function
 
 function deliveryCheckout(delivery){
     if (delivery==="Deliver to my location"){
@@ -161,25 +160,20 @@ function Checkout(sizeTotal,crustTotal,toppingsTotal,deliveryTotal){
             
 }
 
-/*user logic*/
-
+//user logic
 $(document).ready(function(){
     //delivery 
-
     $("#delivery").click(function(){
         $(".hide-delivery").show();
         alert("Delivery to all locations includes an extra charge of Ksh100");
         delivery=this.value;
-        
-
     });
     $("#pickUp").click(function(){
         $(".hide-delivery").hide();
-        delivery=this.value;
-        
+        delivery=this.value;    
     });
 
-    // location
+    // location  function
     $('#locationbtn').click(function() {
         orderLocation=$("#location").val();
         if (delivery==="Deliver to my location"){
@@ -187,9 +181,7 @@ $(document).ready(function(){
         }
         
     });
-    //checkbox for toppings
-   
-    
+    //checkbox for toppings selection radiiobuttons 
     $("#topping1").click(function(){
         if($(this).prop("checked") == true){
             topping1=this.value;
@@ -252,7 +244,7 @@ $(document).ready(function(){
         }
         
     });
-    //form section
+    //form section input output
     
     $("form#myForm").submit(function(event){
         event.preventDefault();
@@ -293,17 +285,5 @@ $(document).ready(function(){
     $("#orderbtn").click(function(){
         $(".hide-order").hide();
         $(".pizza-form").show();
-        total=0;
-        toppingsTotal=0;
-        crustTotal=0;
-        sizeTotal=0
-        location=0;
-        deliveryTotal=0;
-        topping1="";
-        topping2="";
-        topping3="";
-        topping4="";
-        topping5="";
-        topping6="";
     });
 });
