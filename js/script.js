@@ -279,6 +279,7 @@ $(document).ready(function(){
         $(".order").text(newPizza.order())
         $(".ordertotal").text(total);
         $("#myForm").trigger("reset");
+        $("#orderDetails").trigger("reset");
 
     });
 
