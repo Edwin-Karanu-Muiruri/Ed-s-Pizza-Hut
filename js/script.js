@@ -192,6 +192,7 @@ $(document).ready(function(){
 function deliveryDetails(deliveryLocation){
     if(delivery==="Yes"){
         deliveryCost = deliveryCost + 100;
+        alert("Delivery shall cost you an extra ksh100")
     }
     else{deliveryCost =  0;}
 };
@@ -202,52 +203,47 @@ function totalCalculator(totalSizeOfPizzaPrice, totalCrustPrice, totalToppingsPr
 }
     //form section
     
-    $("form#myForm").submit(function(event){
+    $("form#orderForm").submit(function(event){
         event.preventDefault();
-        var size=$("#size").val();
-        var crust=$("#crust").val();
+        var pizzaQuantity=$("#numberOfPizzas").val();
+        var quantity=parseInt(pizzaQuantity);
         
-        var myNumber=$("#noOfPizzas").val();
-        var number=parseInt(myNumber);
+        var pizzaSize=$("#pizzaSize").val();
+        var crustType=$("#crustType").val();
         
-        var t1=$("#tp1").prop("checked");
-        var t2=$("#tp2").prop("checked");
-        var t3=$("#tp3").prop("checked");
-        var t4=$("#tp4").prop("checked");
+        var topping1=$("#topping1").prop("checked");
+        var topping2=$("#topping2").prop("checked");
+        var topping3=$("#topping3").prop("checked");
+        var topping4=$("#topping4").prop("checked");
+        var topping5=$("#topping5").prop("checked");
+        var topping6=$("#topping6").prop("checked");
         if(t1==false&&t2==false&&t3==false&&t4==false){
             alert("Choose atleast one topping");
             return;
         }
         
         
-        var newPizza=new Pizza(size,crust,number,delivery,orderLocation,tp1,tp2,tp3,tp4); 
+        var newPizzaOrder = new pizzaOrder(pizzaSize,crustType,numberOfPizzas,deliveryLocation,topping1,topping2,topping3,topping4,topping5,topping6); 
         
-        sizeCheckout(size,number);
-        crustCheckout(crust,number);
-        toppingsCheckout(size,tp1,tp2,tp3,tp4,number);
-        deliveryCheckout(delivery);
-        Checkout(sizeTotal,crustTotal,toppingsTotal,deliveryTotal);
-        $(".pizza-form").hide();
-        $(".hide-order").show();
-        $(".hide-delivery").hide();
-        $(".order").text(newPizza.order())
-        $(".ordertotal").text(total);
-        $("#myForm").trigger("reset");
+        sizeOfPizza(pizzaSize,numberOfPizzas);
+        pizzaCrust(crustType,numberOfPizzas);
+        pizzaToppings(pizzaSize,topping1,topping2,topping3,topping4,topping5,topping6,numberOfPizzas);
+        deliveryDetails(delivery);
+        totalCalculator(totalSizeOfPizzaPrice, totalCrustPrice, totalToppingsPrice, deliveryCost);
     });
 
-    $("#orderbtn").click(function(){
-        $(".hide-order").hide();
-        $(".pizza-form").show();
-        alert("Have a pizzaful day!");
-        total=0;
-        toppingsTotal=0;
-        crustTotal=0;
-        sizeTotal=0
-        deliveryTotal=0;
-        tp1="";
-        tp2="";
-        tp3="";
-        tp4="";
+    $("#submitButton").click(function(){
+        totalPrice=0;
+        totalToppingsPrice=0;
+        totalCrustPrice=0;
+        totalSizeOfPizzaPrice=0
+        deliveryCost=0;
+        topping1="";
+        topping2="";
+        topping3="";
+        topping4="";
+        topping5="";
+        topping6="";
     });
 });    
 
