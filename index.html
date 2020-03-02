@@ -25,7 +25,7 @@
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="orderPages.html">Know What you want? Make your order here.</a>
+              <a class="nav-link" href="#myForm">Know What you want? Make your order here.</a>
             </li>
           </ul>
     </div>
@@ -104,68 +104,77 @@
     <div class="jumbotron">
         <h1><b>Make your order</b></h1>
     </div>
-    <div class="orderForm">
-        <form id="orderForm">
+    <div class="pizza-form">
+        <form id="myForm">
             <div class="form-group">
-                <p>What type of pizza would you like?</p>
-                <select id="crustOptions">
-                    <option value="defaultOption" id="">Select a pizza type</option>
-                    <option value="nYCStyle">New-York style pizza</option>
-                    <option value="pepperoni">Pepperoni</option>
-                    <option value="vegan">Vegan Pizza</option>
-                    <option value="otherPizzaTypes">other pizza types</option>
-                  </select>
+                <h3 class="quantity">How many pizzas would you like?</h3><br>
+                <input type="number" name="noOfPizzas" id="noOfPizzas" class="form-control" min="1" placeholder="How many pizzas would you like?" aria-describedby="helpId" required>
             </div>
-            <div class="form-group">
-                <p>What size of pizza would you like?</p>
-                <select id="pizzaSize">
-                    <option value="defaultOption">Select a pizza size</option>
-                    <option value="small" id="small">Small</option>
-                    <option value="medium" id="medium">Medium</option>
-                    <option value="large" id="large">Large</option>
-                    <option value="doubleStacked" id="doubleStacked">Double Stacked</option>
-                  </select>
-            </div>
-            <div class="form-group">
-                <p>How Many Pizzas would you like?</p>
-                <input type="number" class="form-control" id="numberOfPizzas" placeholder="" name="Number of Pizzas">
-            </div>
-            <div class="form-group" id="crustOptions">
-                <p>What type of crust would you like on your Pizza?</p>
-                <select id="crustType">
-                    <option value="defaultOption">Crust options</option>
-                    <option value="crispy" id="crispy">crispy</option>
-                    <option value="stuffed" id="stuffed">stuffed</option>
-                    <option value="glutten-Free-crispy" id="Glutten-Free-crispy">Glutten-Free-crispy</option>
-                    <option value="glutten-Free-stuffed" id="Glutten-Free-stuffed">Glutten-Free-stuffed</option>
-                  </select>
-            </div>
-            <div class="form-group">
-                <p>Choose the toppings you'd like on your Pizza?</p>
-                <select id="toppingsOptions">
-                    <option value="bacon" id="topping1">Bacon</option>
-                    <option value="extraCheese" id="topping2">Extra Cheese</option>
-                    <option value="cheeseAndOnion" id="topping3">Cheese and onions</option>
-                    <option value="mushroom" id="topping4">Mushrooms</option>
-                    <option value="blackOlives" id="topping5">Black Olives</option>
-                    <option value="greenPeppers" id="topping6">Green Peppers</option>
-                  </select>
-            <div class="checkbox">
-                <p>Would you like your pizza to your location or pick it up from us?</p>
-                <label><input type="checkbox" name="remember" onclick="whatToShow()" id="deliveryButton"> Deliver to me</label>
-                <div class="deliveryOptions">
-                    <p>Please enter a delivery Location</p>
-                    <input type="text" class="form-control" id="deliveryAddress" placeholder="" name="Place of delivery">
-                </div>
-                <label><input type="checkbox" name="remember" id="selfPickUp"> I'll pick it up myself</label>
-                <p class="pickUpParagraph">
-                    Please show our attendants your receipt to receive your pizza.<br>
-                    Thank you for choosing Ed's Pizza Hut ;-)
-                </p>
-            </div>
-            <button type="submit" class="btn btn-default" id="submitButton" onclick="totalCalculator()">Place your order</button>
-        </form>
-    </div>
 
+            <div class="form-group">
+              <h3 class="size">What Size of Pizza would you like?</h3><br>
+              <select name="size" id="size" required>
+                <option disabled selected value>Choose a Pizza Size</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+                <h3 class="crust">What type of crust would you like on your pizza?</h3><br>
+                <select id="crust" required>
+                    <option disabled selected value>Choose Type of Crust from the options below</option>
+                    <option value="Crispy">Crispy</option>
+                    <option value="Stuffed">Stuffed</option>
+                    <option value="Gluten Free Crispy">Gluten Free Crispy</option>
+                    <option value="Gluten Free Stuffed">Gluten Free Stuffed</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <h3 class="">What toppings would you like on your pizza?</h3><br>
+                <input type="checkbox" name="locationthemes" id="topping1" value="Bacon">Bacon <br>
+                <input type="checkbox" name="locationthemes" id="topping2" value="Extra Cheese">Extra Cheese <br>
+                <input type="checkbox" name="locationthemes" id="topping3" value="Cheese and Onions">Cheese and onions <br>
+                <input type="checkbox" name="locationthemes" id="topping4" value="mushrooms">Mushrooms<br>
+                <input type="checkbox" name="locationthemes" id="topping5" value="Black Olives">Black Olives<br>
+                <input type="checkbox" name="locationthemes" id="topping6" value="Green Peppers">Green Peppers<br>
+            </div>
+        
+            <div class="form-group">
+              <label for="delivery">Would you like your order to be delivered to your location?</label></label><br>
+              
+              <div class="delivery-options">
+                <h3><input type="radio" name="delivery" id="delivery" value="Deliver to my location">Deliver to my location</h3>
+                <h3><input type="radio" name="delivery" id="pickUp" value="I'll pick it up myself"> I'll pick it up myself</h3> 
+              </div>
+               
+              <div class="hide-delivery">
+                  <div class="form-group">
+                    <label for="location">Please input a delivery address</label>
+                    <input type="text" name="location" id="location" class="form-control"><br>
+                    <input type="button" id="locationbtn" value="Submit Delivery Address">
+                  </div>
+              </div>
+              
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Calculate Total">
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="orderDetails">    
+        <div class="hide-order">
+            <h2>Order Summary</h2><br>
+        </div>
+        <div class="orderdetails">
+            <h5 class="order"></h5><br>
+            <h3><u>Total</u></h3>
+            <h3><span class="ordertotal"></span></h3><br>
+            <input type="button" value="Complete your Order " id="orderbtn">
+        </div>
+    </div>
 </body>
 </html>
