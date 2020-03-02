@@ -145,8 +145,8 @@ function toppingsCheckout(size,topping1,topping2,topping3,topping4,topping5,topp
 //delivery function
 
 function deliveryCheckout(delivery){
-    if (delivery==="Yes"){
-        deliveryTotal=deliveryTotal+50
+    if (delivery==="Deliver to my location"){
+        deliveryTotal=deliveryTotal+100
     }
     else{
         deliveryTotal=0
